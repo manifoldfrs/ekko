@@ -24,6 +24,8 @@ install: venv
 	@echo ">> Installing Python dependencies"
 	$(PIP) install --upgrade pip
 	$(PIP) install -r requirements.txt
+	@echo ">> Downloading SpaCy language model"
+	$(VENV_DIR)/bin/python -m spacy download en_core_web_sm
 
 precommit: venv
 	@echo ">> Installing & running pre‑commit hooks"
@@ -50,12 +52,13 @@ format: venv
 	$(VENV_DIR)/bin/isort .
 
 lint: venv
-	@echo ">> Linting with ruff"
-	$(VENV_DIR)/bin/ruff check .
+	@echo ">> Linting and formatting with black and isort"
+	$(VENV_DIR)/bin/black .
+	$(VENV_DIR)/bin/isort .
 
 test: venv
 	@echo ">> Running pytest"
-	$(VENV_DIR)/bin/pytest
+	PYTHONPATH=. $(VENV_DIR)/bin/pytest
 
 # Utilities
 clean:
