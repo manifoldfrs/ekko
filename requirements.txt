@@ -1,0 +1,14 @@
+fastapi
+uvicorn[standard]
+py2neo
+neo4j
+torch>=2.0.0
+dgl>=0.9.0
+torch-geometric
+numpy
+pandas
+spacy
+transformers
+python-dotenv
+black
+isort
