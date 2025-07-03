@@ -76,22 +76,18 @@ cd frontend && npm run dev
 
 ```
 ekko/
-├── backend/
-│   ├── app/
-│   │   ├── main.py           # FastAPI entrypoint
-│   │   ├── graph_builder.py  # ETL: parse → triples → Neo4j
-│   │   ├── retriever.py      # Cypher + vector fallback
-│   │   └── synthesizer.py    # Chain-of-thought templates
-│   └── tests/               # Unit & integration tests
-├── frontend/
-│   ├── src/
-│   │   ├── App.tsx           # React chat UI
-│   │   └── components/
-│   └── vite.config.ts
-├── .gitignore
-├── .cursorignore
+├── ekko/          # Python package
+│   ├── ingest/    # PDF & web loaders
+│   ├── graph/     # KG construction & queries
+│   ├── vector/    # Embedding + ANN index
+│   ├── rag/       # Retrieval orchestration
+│   ├── api/       # FastAPI endpoints
+│   └── utils/
+├── tests/
 ├── requirements.txt
+├── .cursorignore
 └── README.md
+
 ```
 
 ---
