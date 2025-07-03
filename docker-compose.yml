@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  neo4j:
+    image: neo4j:5.19-community
+    container_name: ekko_neo4j
+    environment:
+      - NEO4J_AUTH=neo4j/password   # ⚠️  change password in production
+    ports:
+      - "7474:7474"   # HTTP UI
+      - "7687:7687"   # Bolt driver
+    volumes:
+      - neo4j_data:/data
+    restart: unless-stopped
+
+volumes:
+  neo4j_data:

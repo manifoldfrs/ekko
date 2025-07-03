@@ -13,9 +13,7 @@ PIP           := $(VENV_DIR)/bin/pip
 ACTIVATE      := . $(VENV_DIR)/bin/activate
 DOCKER_COMPOSE := docker compose
 
-# ------------------------------------------------------------------------
 # Environment
-# ------------------------------------------------------------------------
 $(VENV_DIR):
 	@echo ">> Creating virtualenv in $(VENV_DIR)"
 	$(PYTHON) -m venv $(VENV_DIR)
@@ -31,9 +29,7 @@ precommit: venv
 	@echo ">> Installing & running pre‑commit hooks"
 	$(VENV_DIR)/bin/pre-commit install
 
-# ------------------------------------------------------------------------
 # Neo4j via Docker Compose
-# ------------------------------------------------------------------------
 neo4j:
 	@echo ">> Launching Neo4j (docker‑compose)"
 	$(DOCKER_COMPOSE) up -d neo4j
@@ -42,16 +38,12 @@ stop:
 	@echo ">> Stopping docker services"
 	$(DOCKER_COMPOSE) down
 
-# ------------------------------------------------------------------------
 # Aggregate workflows
-# ------------------------------------------------------------------------
 dev: install precommit neo4j
 	@echo ">> Dev environment ready 🎉"
 	@echo "   Neo4j Browser → http://localhost:7474  (user: neo4j / password: password)"
 
-# ------------------------------------------------------------------------
 # Code Quality
-# ------------------------------------------------------------------------
 format: venv
 	@echo ">> Auto‑formatting with black and isort"
 	$(VENV_DIR)/bin/black .
@@ -65,9 +57,7 @@ test: venv
 	@echo ">> Running pytest"
 	$(VENV_DIR)/bin/pytest
 
-# ------------------------------------------------------------------------
 # Utilities
-# ------------------------------------------------------------------------
 clean:
 	@echo ">> Cleaning caches"
 	rm -rf **/__pycache__ .pytest_cache .ruff_cache
