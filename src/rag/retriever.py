@@ -1,5 +1,4 @@
 """
-ekko.rag.retriever
 ------------------
 
 Phase 3 hybrid retrieval:
