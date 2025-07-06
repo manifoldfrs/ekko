@@ -32,10 +32,10 @@
 
 ### Phase 2 – Knowledge Graph
 
-- [ ] Define node labels: `:Entity`, `:Document`
-- [ ] Relationship types: `MENTIONS`, `SIMILAR_TO`
-- [ ] Bulk load with `neo4j-admin import` or transactional Cypher
-- [ ] Validate graph size & basic queries
+- [x] Define node labels: `:Entity`, `:Document`
+- [x] Relationship types: `MENTIONS`, `SIMILAR_TO`
+- [x] Bulk load with `neo4j-admin import` or transactional Cypher
+- [x] Validate graph size & basic queries
 
 ### Phase 3 – Hybrid Retrieval
 

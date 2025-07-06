@@ -14,7 +14,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 INTERIM_DIR = PROJECT_ROOT / "data" / "interim"
 INTERIM_DIR.mkdir(parents=True, exist_ok=True)
 
-# spaCy model (lazy‑loaded to keep import time low for CLI tooling & tests)
+# spaCy model (lazy-loaded to keep import time low for CLI tooling & tests)
 _NLP = None
 
 
@@ -46,7 +46,7 @@ EntityTriple = Tuple[str, str, str]
 
 def extract_triples(text: str) -> List[EntityTriple]:
     """
-    Naïve triple extractor: take consecutive named entities
+    Naive triple extractor: take consecutive named entities
     and assume pattern (SUBJ, "related_to", OBJ).
     """
     doc = _get_nlp()(text)

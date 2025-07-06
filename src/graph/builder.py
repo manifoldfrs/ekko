@@ -104,7 +104,7 @@ def _cli():
     args = parser.parse_args()
 
     build_graph(args.jsonl, schema_first=not args.skip_schema)
-    print("✅ Knowledge graph loaded.")
+    print("OK Knowledge graph loaded.")
 
 
 if __name__ == "__main__":
