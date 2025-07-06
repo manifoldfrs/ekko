@@ -25,10 +25,10 @@
 
 ### Phase 1 – Ingestion ETL
 
-- [ ] PDF → text via `pdfminer.six`
-- [ ] Web article via `trafilatura`
-- [ ] Triple extraction using spaCy NER + custom patterns
-- [ ] Write to `data/interim/*.jsonl`
+- [x] PDF → text via `pdfminer.six`
+- [x] Web article via `trafilatura`
+- [x] Triple extraction using spaCy NER + custom patterns
+- [x] Write to `data/interim/*.jsonl`
 
 ### Phase 2 – Knowledge Graph
 
