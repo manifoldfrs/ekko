@@ -1,8 +1,8 @@
 # Ekko
 
-> **One-click personal knowledge‑graph chat**
+> **One-click personal knowledge-graph chat**
 >
-> A minimal open‑source prototype that ingests your own corpus (PDFs, YouTube transcripts, tweets), auto‑constructs a heterogeneous knowledge graph, and serves a chat endpoint answering questions by walking the graph + neural rerank. Optional voice front‑end is a cherry on top.
+> A minimal open-source prototype that ingests your own corpus (PDFs, YouTube transcripts, tweets), auto-constructs a heterogeneous knowledge graph, and serves a chat endpoint answering questions by walking the graph + neural rerank. Optional voice front-end is a cherry on top.
 
 ---
 
@@ -11,10 +11,10 @@
 - **Heterogeneous Knowledge Graph**: Extract entities & relations, store as nodes & edges in Neo4j
 - **Hybrid Retrieval**:
 
-  1. **Graph Walk**: Pull k‑hop neighborhood via Cypher
+  1. **Graph Walk**: Pull k-hop neighborhood via Cypher
   2. **Neural Rerank**: Embed triples and rerank by cosine similarity
 
-- **Answer Synthesis**: Chain‑of‑thought prompts with provenance citations
+- **Answer Synthesis**: Chain-of-thought prompts with provenance citations
 - **Modular Voice UI** (optional): Whisper streaming + ElevenLabs TTS
 - **Evaluation Harness**: Benchmarks vs. plain RAG (latency & QA accuracy)
 
@@ -24,20 +24,20 @@
 
 | Layer            | Tech                                    |
 | ---------------- | --------------------------------------- |
-| **Backend**      | Python · FastAPI · Uvicorn              |
-| **Graph DB**     | Neo4j · py2neo                          |
-| **ML**           | PyTorch · DGL · PyG · Transformers      |
-| **NLP**          | spaCy · Hugging Face                    |
-| **Frontend**     | Node.js · TypeScript · React · Vite     |
-| **Voice (opt.)** | OpenAI Whisper · ElevenLabs TTS         |
-| **Dev Tools**    | virtualenv · black · isort · pre-commit |
+| **Backend**      | Python - FastAPI - Uvicorn              |
+| **Graph DB**     | Neo4j - py2neo                          |
+| **ML**           | PyTorch - DGL - PyG - Transformers      |
+| **NLP**          | spaCy - Hugging Face                    |
+| **Frontend**     | Node.js - TypeScript - React - Vite     |
+| **Voice (opt.)** | OpenAI Whisper - ElevenLabs TTS         |
+| **Dev Tools**    | virtualenv - black - isort - pre-commit |
 
 ---
 
 ## 📋 Prerequisites
 
-- **Python** ≥ 3.10
-- **Node.js** ≥ 18.x + npm/Yarn
+- **Python** >= 3.10
+- **Node.js** >= 18.x + npm/Yarn
 - **Neo4j** Community or Enterprise (v4.x or v5.x)
 - **Docker** (optional for local Neo4j)
 
@@ -61,7 +61,7 @@ npm install
 cd ..
 
 # 4. Configure Neo4j
-#   - Copy .env.example → .env and set NEO4J_URI, NEO4J_USER, NEO4J_PASS
+#   - Copy .env.example -> .env and set NEO4J_URI, NEO4J_USER, NEO4J_PASS
 
 # 5. Run backend + frontend
 # In one shell:

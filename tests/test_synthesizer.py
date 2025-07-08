@@ -14,4 +14,4 @@ def test_generate_answer_stub(monkeypatch):
     monkeypatch.delenv("OPENAI_API_KEY", raising=False)
     out = generate_answer("Who is Bob related to?", TRIPLES)
     assert "[T1]" in out["answer"] and "[T2]" in out["answer"]
-    assert "Alice —RELATED_TO→ Bob" in out["prompt"]
+    assert "Alice --RELATED_TO-> Bob" in out["prompt"]

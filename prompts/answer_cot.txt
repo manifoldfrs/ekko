@@ -6,5 +6,5 @@ Question:
 Relevant facts (triples):
 {triples_formatted}
 
-**Reason step‑by‑step**, then provide a concise answer in plain language.
-Cite triples like [T1], [T2] … so the caller can trace provenance.
+**Reason step-by-step**, then provide a concise answer in plain language.
+Cite triples like [T1], [T2] ... so the caller can trace provenance.

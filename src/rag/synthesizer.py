@@ -1,5 +1,5 @@
 """
-Convert query + triples → natural-language answer with provenance citations.
+Convert query + triples -> natural-language answer with provenance citations.
 Falls back to a stub response if OPENAI_API_KEY is not set.
 """
 
@@ -13,7 +13,7 @@ from typing import List, Sequence, Tuple
 try:
     import openai  # type: ignore
 except ModuleNotFoundError:  # pragma: no cover
-    openai = None  # noqa: N816  – allow later runtime check
+    openai = None  # noqa: N816  - allow later runtime check
 
 Triple = Tuple[str, str, str]
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
@@ -28,7 +28,7 @@ def _render_prompt(question: str, triples: Sequence[Triple]) -> str:
     tpl = _load_template()
     triples_fmt: List[str] = []
     for idx, (s, p, o) in enumerate(triples, 1):
-        triples_fmt.append(f"[T{idx}] {s} —{p}→ {o}")
+        triples_fmt.append(f"[T{idx}] {s} --{p}-> {o}")
     return tpl.format(question=question, triples_formatted="\n".join(triples_fmt))
 
 

@@ -1,6 +1,6 @@
-# Ekko – Developer Convenience Makefile
+# Ekko - Developer Convenience Makefile
 # Usage examples:
-#   make dev          # full setup: venv → install → pre-commit → neo4j up
+#   make dev          # full setup: venv -> install -> pre-commit -> neo4j up
 #   make format       # run black + isort on codebase
 #   make lint         # ruff static checks
 #   make test         # pytest suite
@@ -28,12 +28,12 @@ install: venv
 	$(VENV_DIR)/bin/python -m spacy download en_core_web_sm
 
 precommit: venv
-	@echo ">> Installing & running pre‑commit hooks"
+	@echo ">> Installing & running pre-commit hooks"
 	$(VENV_DIR)/bin/pre-commit install
 
 # Neo4j via Docker Compose
 neo4j:
-	@echo ">> Launching Neo4j (docker‑compose)"
+	@echo ">> Launching Neo4j (docker-compose)"
 	$(DOCKER_COMPOSE) up -d neo4j
 
 stop:
@@ -43,11 +43,11 @@ stop:
 # Aggregate workflows
 dev: install precommit neo4j
 	@echo ">> Dev environment ready 🎉"
-	@echo "   Neo4j Browser → http://localhost:7474  (user: neo4j / password: password)"
+	@echo "   Neo4j Browser -> http://localhost:7474  (user: neo4j / password: password)"
 
 # Code Quality
 format: venv
-	@echo ">> Auto‑formatting with black and isort"
+	@echo ">> Auto-formatting with black and isort"
 	$(VENV_DIR)/bin/black .
 	$(VENV_DIR)/bin/isort .
 
